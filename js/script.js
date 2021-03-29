@@ -8,9 +8,14 @@
 // Se clicchiamo su Genera, la sezione col biglietto apparirà e sarà popolata coi dati del biglietto
 // Se clicchiamo su annulla dobbiamo ripulire il form e nascondere la sezione col biglietto.
 
+
+
+// creo i due bottoni che permetteranno la creazione e il reset del biglietto
 var sendButton = document.getElementById('send-buton')
 var deleteButton = document.getElementById('delete-button')
 
+
+//creo il biglietto
 sendButton.addEventListener('click',function(){
     var costoKm = 0.21;
     var chilometriNum = parseInt(document.getElementById('km-da-percorrere').value);
@@ -19,7 +24,7 @@ sendButton.addEventListener('click',function(){
 
     var nomeUtente = document.getElementById('nome-utente').value;
     var eta = document.getElementById('etá').value
-
+//imposto gli sconti basati sullétá dell'utente
     if( eta == 'minorenne' ){
         prezzofinale = prezzoBiglietto - prezzoBiglietto * 0.20
     }else if( eta == 'over65'){
@@ -28,34 +33,50 @@ sendButton.addEventListener('click',function(){
         prezzofinale = prezzoBiglietto
     }
 
+//per far comparire il biglietto a schermo
     document.getElementById('biglietto').className = '';
 
+//inserisco nel biglietto i dati forniti dall'utente
     document.getElementById('nome').innerHTML = nomeUtente
-    console.log(document.getElementById('nome').innerHTML );
-
     document.getElementById('offerta').innerHTML = eta
-    document.getElementById('carrozza').innerHTML = getRndInteger(1,10)
-    document.getElementById('codice').innerHTML = getRndInteger(90000,99999)
-    document.getElementById('costo').innerHTML = prezzofinale + ' $'
 
+    if( eta != '' && chilometriNum != '' ){
+        document.getElementById('carrozza').innerHTML = getRndInteger(1,10);
+        document.getElementById('codice').innerHTML = getRndInteger(90000,99999);
+        document.getElementById('costo').innerHTML = prezzofinale + ' $';
+    }
+    
 })
+
+//reset del biglietto
 deleteButton.addEventListener('click',function(){
  
     document.getElementById('biglietto').className = 'void';
-    azzera('nome-utente');
-    azzera('km-da-percorrere')
-    azzera('etá')
-    azzera('nome')
-    azzera('offerta')
+    azzeraForm('nome-utente');
+    azzeraForm('km-da-percorrere');
+    azzeraForm('etá');
+    azzeraForm('nome');
+    azzeraForm('offerta');
+    azzeraBiglietto('carrozza');
+    azzeraBiglietto('codice');
+    azzeraBiglietto('costo');
 })
 
 
-
-
-
-function azzera(id) { //funzione che attiva il cambio del testo
-    document.getElementById(id).value = ''
+//funzione per azzerare un inner html
+//
+function azzeraBiglietto(id){
+    document.getElementById(id).innerHTML = '';
 }
+
+//funzione per azzerare il valore di un elemento html
+//
+function azzeraForm(id) { //funzione che attiva il cambio del testo
+    document.getElementById(id).value = '';
+}
+
+//funzione per generare numeri random
+//
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
 }

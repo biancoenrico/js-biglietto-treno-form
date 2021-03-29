@@ -7,7 +7,7 @@
 h2{
     text-align: center;
     color: white;
-    padding-bottom: 10px;
+    padding: 10px 0;
 }
 .wrapper{
     padding: 5% 10%;
@@ -49,7 +49,6 @@ label{
 .container-biglietto{
     display: flex;
     width: 100%;
-    border-radius: 10px;
     overflow: hidden;
 }
 .nome , .sezione{
@@ -62,5 +61,12 @@ label{
 .nome{
     background-color: lightgray;
     font-size: 28px;
+    font-weight: bold;
+}
+.info{
+    padding: 10px 20px;
+}
+.dettagli{
+    font-size: 20px;
     font-weight: bold;
 }
