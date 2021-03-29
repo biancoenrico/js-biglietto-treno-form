@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <h2>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h2>
+
+        <div class="form">
+            <div class="flex-col">
+                <label for="nome-utente">nome cognome</label>
+                <input class="input" id="nome-utente" type="text" placeholder="inserisci nome"> 
+            </div>
+            
+            <div class="flex-col">
+                <label for="kmDaPerc">Km da percorrere</label>
+                <input class="input" id="kmDaPerc" type="number" placeholder="km">
+            </div>
+            
+            <div class="flex-col">
+                <label for="etá">Fascia d'età</label>     
+                <select class="input" name="etá" id="etá">
+        
+                <option value=""></option>
+        
+                <option value="minorenne">minorenne</option>
+        
+                <option value="maggiorenne">maggiorenne</option>
+        
+                <option value="anziani">over-65</option>
+        
+                </select>
+            </div>
+            
+            <div class="btn">
+                <button id="send-buton"></button>
+                <button id="delete-buton"></button>
+            </div>
+
+        </div>
+
+        
+    </div>
+
+
+
+    
+
+    <script src="js/script.js"></script>
+</body>
+</html>

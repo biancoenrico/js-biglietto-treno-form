@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2{
+    text-align: center;
+    color: white;
+    padding-bottom: 10px;
+}
+.wrapper{
+    padding: 5% 10%;
+    height: 100vh;
+    background-color: brown;
+}
+.form{
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 10px;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 40px 0px;
+}
+label{
+    text-align: center;
+    padding-bottom: 15px;
+    color: brown;
+}
