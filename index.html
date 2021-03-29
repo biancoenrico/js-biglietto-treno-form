@@ -13,39 +13,66 @@
 
         <h2>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h2>
 
-        <div class="form">
-            <div class="flex-col">
-                <label for="nome-utente">nome cognome</label>
-                <input class="input" id="nome-utente" type="text" placeholder="inserisci nome"> 
-            </div>
+        <div class="wrap">
+            <div class="container">
+                <div class="flex-col">
+                    <label for="nome-utente">nome cognome</label>
+                    <input class="input" id="nome-utente" type="text" placeholder="inserisci nome"> 
+                </div>
+                
+                <div class="flex-col">
+                    <label for="km-da-percorrere">Km da percorrere</label>
+                    <input class="input" id="km-da-percorrere" type="number" placeholder="km">
+                </div>
+                
+                <div class="flex-col">
+                    <label for="etá">Fascia d'età</label>     
+                    <select class="input" name="etá" id="etá">
             
-            <div class="flex-col">
-                <label for="kmDaPerc">Km da percorrere</label>
-                <input class="input" id="kmDaPerc" type="number" placeholder="km">
-            </div>
+                    <option value=""></option>
             
-            <div class="flex-col">
-                <label for="etá">Fascia d'età</label>     
-                <select class="input" name="etá" id="etá">
-        
-                <option value=""></option>
-        
-                <option value="minorenne">minorenne</option>
-        
-                <option value="maggiorenne">maggiorenne</option>
-        
-                <option value="anziani">over-65</option>
-        
-                </select>
-            </div>
+                    <option value="minorenne">minorenne</option>
             
+                    <option value="maggiorenne">maggiorenne</option>
+            
+                    <option value="over65">over-65</option>
+            
+                    </select>
+                </div>
+                
+    
+            </div>
             <div class="btn">
-                <button id="send-buton"></button>
-                <button id="delete-buton"></button>
+                <button id="send-buton">send</button>
+                <button id="delete-button">delete</button>
             </div>
-
         </div>
-
+        <div id="biglietto" class="void">
+            <div class="wrap">
+                <div class="container-biglietto">
+                    <div class="nome">
+                        <span>nome passeggero</span><br>
+                        <span id="nome"></span>
+                    </div>
+                    <div class="sezione">
+                        <span>offerta</span><br>
+                        <span id="offerta"></span>
+                    </div>                  
+                    <div class="sezione">
+                        <span>carrozza</span><br>
+                        <span id="carrozza"></span>
+                    </div>
+                    <div class="sezione">
+                        <span>codice cp</span><br>
+                        <span id="codice"></span>
+                    </div>
+                    <div class="sezione">
+                        <span>costo biglietto</span><br>
+                        <span id="costo"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
         
     </div>
 
