@@ -21,9 +21,9 @@ sendButton.addEventListener('click',function(){
     var chilometriNum = parseInt(document.getElementById('km-da-percorrere').value);
     var prezzoBiglietto = (chilometriNum * costoKm );
     var prezzofinale
-
     var nomeUtente = document.getElementById('nome-utente').value;
     var eta = document.getElementById('etá').value
+
 //imposto gli sconti basati sullétá dell'utente
     if( eta == 'minorenne' ){
         prezzofinale = prezzoBiglietto - prezzoBiglietto * 0.20
